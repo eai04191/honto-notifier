@@ -1,4 +1,4 @@
-function hontoNotifer() {
+function hontoNotifier() {
 
     var discordWebhookURL = "YOUR_WEBHOOK_URL_HERE"; // https://discordapp.com/api/webhooks/...
 

@@ -1,4 +1,4 @@
-Honto Notifer
+Honto Notifier
 ===
 
 A script that parses honto's mail and notifies Discord of the information of the book you purchased.
