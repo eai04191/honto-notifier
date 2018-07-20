@@ -30,8 +30,6 @@ function hontoNotifier() {
 
             // 空行削除
             var text = text.replace(/^\r\n+/gm, "");
-
-            // 空白削除
             var text = text.replace(/^\s+/gm, "");
 
             var orderNum = text.match(/ご注文番号：(D\d+)/)[1];
