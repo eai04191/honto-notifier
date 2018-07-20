@@ -36,19 +36,15 @@ function hontoNotifier() {
 
             //　最初を消す
             var text = text.replace(/^[\s\S]*価格（税込）\r/g, "");
-
             // 後ろ消す
-            var text = text.replace(/\rご注文金額の合計[\s\S]*禁じます。\r/g, "");
-
-            //
+            var text = text.replace(/\rご注文金額の合計[\s\S]*$/g, "");
+            // 使わないところを消す
             var text = text.replace(/(一般書|コミック)\r/g, "");
 
-            //      Logger.log(orderNum);
-            //      Logger.log(text);
+            console.log("注文番号: " + orderNum);
 
             var array = text.split(/\r\n|\r|\n/);
             var str = "";
-            //      Logger.log(array);
 
             var iter = __iterator(array, 5);
 
@@ -57,7 +53,7 @@ function hontoNotifier() {
             // 本毎の処理
             while (iter.hasNext()) {
                 var data = iter.next();
-                Logger.log(data);
+                console.log(data);
 
                 var format = data[0]; // 電子書籍
                 var title = data[1];
@@ -105,10 +101,6 @@ function hontoNotifier() {
             var response = UrlFetchApp.fetch(url, options);
 
             message.markRead(); // Mark as read
-
-            Utilities.sleep(1000);
-
-
         });
     });
 }
