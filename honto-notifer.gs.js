@@ -37,7 +37,7 @@ function hontoNotifier() {
             var orderNum = text.match(/ご注文番号：(D\d+)/)[1];
 
             //　最初を消す
-            var text = text.replace(/honto[\s\S]*価格（税込）\r/g, "");
+            var text = text.replace(/^[\s\S]*価格（税込）\r/g, "");
 
             // 後ろ消す
             var text = text.replace(/\rご注文金額の合計[\s\S]*禁じます。\r/g, "");
